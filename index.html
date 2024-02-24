@@ -4,6 +4,9 @@
     <head>
         <script> scr="js/mainScript.js"</script>
         <style>
+            
+
+            
             h1 {
                 font-family:sans-serif; 
                 font-variant:small-cap; 
@@ -20,6 +23,8 @@
                 
             }
             
+
+            
             nav {
                 background-color: black;
                 
@@ -31,16 +36,40 @@
                 box-sizing:border-box;
             }
             
+            ul {list-style-type:none; margin:0; padding:0; overflow:none; background-color: black;}
+            li {float:left; border-style:solid; background-color: black;}
+            
+            li button {
+                background-color: black;
+                display:block; padding:8px;
+            
+                font-family:sans-serif; 
+                font-variant:small-cap; 
+                color:white; 
+                
+                transition-duration: 0.2;
+                
+            }
+            
+            li button:hover{
+                background-color: darkgray;
+            }
+            
+
+            
             section {
                 background-color: black;
                 
                 margin:auto;
-                width: 80%;
-                height: 600;
+                width:80%;
+                height:600;
+                padding-top:0px;
                 
                 border-style:solid; border-color:white;
                 box-sizing:border-box;
             }
+            
+
             
             body {background-color:black}
             div {background-color: black}
@@ -58,7 +87,9 @@
         
         <div>
             <nav> <!-- Navigation Tabs -->
-
+                <ul>
+                    <li><button type="button"><i>Rename</i></button></li>
+                </ul>
             </nav>
   
             <section> <!-- Main section for content -->
