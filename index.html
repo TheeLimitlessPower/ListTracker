@@ -25,10 +25,12 @@
                 
                 margin:auto;
                 width:80%;
-                height:50;
+                height:42;
                 
                 border-style:solid; border-color:white; border-width:thick;
+                border-top-style:none;border-bottom-style:none;
                 box-sizing:border-box;
+                
             }
             
             ul {list-style-type:none; margin:0; padding:0; overflow:none; background-color: black;}
@@ -46,11 +48,11 @@
             }
             
             li button:hover{
-                background-color: darkgray;
+                background-color:darkgray;
             }
             
             section {
-                background-color: black;
+                background-color:black;
                 
                 margin-left:auto;
                 margin-right:auto;
@@ -69,7 +71,7 @@
                 margin-left:2%;
                 margin-top:2%;
                 
-                background-color: black;
+                background-color:black;
                 border-style:solid; border-color:white; border-width:thick;
             }
             
@@ -78,7 +80,7 @@
                 width:290px;
                 height:100px;
                 
-                background-color: black;
+                background-color:black;
                 border-style:solid; border-color:white; border-width:thick;
             }
             
@@ -88,16 +90,72 @@
                 font-family:sans-serif; 
                 font-variant:small-cap; 
                 color:white;
-                font-size: 30px;
+                font-size:30px;
                 text-align:center;
                 
-                padding-top: 30px;
+                padding-top:30px;
             }
             
+            section objectives {
+                display:block;
+                width:250px;
+                height:100px;
+                margin-left:20px;
+                margin-right:20px;
+                margin-top:10px;
+                
+                background-color: black;
+                border-style:solid; border-color:white;
+            }
+            
+            section p {
+                font-family:sans-serif; 
+                font-variant:small-cap; 
+                color:white;
+                
+                padding-left:10px;
+                padding-right:2px;
+                padding-top: 0;
+                margin-top:7px;
+            }
+            
+            section hideOption {
+                float: left;
+                width:75px;
+                height:20px;
+                margin-left:5px;
+                
+                font-family:sans-serif; 
+                font-variant:small-cap; 
+                color:white;
+                
+                background-color:black;
+            }
+            
+            section ticket {
+                float: left;
+                width:100px;
+                height:20px;
+                margin-left:25px;
+                margin-top:3px;
+                
+                font-family:sans-serif; 
+                font-variant:small-cap; 
+                text-align:center
+                color:white;
+                
+                background-color:black;
+            }
+            
+            section objectives::after {
+                content:"";
+                display:table;
+                clear:both;
+            }
             
             body {background-color:black}
             
-            div {background-color: black}
+            div {background-color:black}
             
             
         </style>
@@ -113,7 +171,7 @@
         <div>
             <nav> <!-- Navigation Tabs -->
                 <ul>
-                    <li><button type="button"><i>Rename</i></button></li> <!-- Addable and renamable buttons -->
+                    <li><button type="button"><i>Current Tab</i></button></li> <!-- Addable and renamable buttons -->
                 </ul>
             </nav>
   
@@ -122,7 +180,17 @@
                     <header><title>Devan</title></header>
                     
                     <list>
-                    
+                        <objectives>
+                            <p>send info to this client and look for a return<p>
+                            
+                            <hideOption>
+                                <input type="checkbox" id="done" name="done" checked/>
+                                <label for="done">Done</label>
+                            </hideOption>
+                            
+                            <ticket>ID:128987189</ticket>
+                            
+                        </objectives>
                     </list>
                 </listObj>
             </section>
