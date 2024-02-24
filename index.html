@@ -3,17 +3,14 @@
 <html>
     <head>
         <script> scr="js/mainScript.js"</script>
-        <style>
-            
-
-            
+        <style> 
             h1 {
                 font-family:sans-serif; 
                 font-variant:small-cap; 
                 color:white; 
                 font-size:30px;
                 
-                border-style:solid; border-color:white; 
+                border-style:solid; border-color:white; border-width:thick;
                 box-sizing:border-box;
                 
                 padding:25px;
@@ -23,8 +20,6 @@
                 
             }
             
-
-            
             nav {
                 background-color: black;
                 
@@ -32,13 +27,13 @@
                 width:80%;
                 height:50;
                 
-                border-style:solid; border-color:white;
+                border-style:solid; border-color:white; border-width:thick;
                 box-sizing:border-box;
             }
             
             ul {list-style-type:none; margin:0; padding:0; overflow:none; background-color: black;}
             li {float:left; border-style:solid; background-color: black;}
-            
+                
             li button {
                 background-color: black;
                 display:block; padding:8px;
@@ -47,31 +42,61 @@
                 font-variant:small-cap; 
                 color:white; 
                 
-                transition-duration: 0.2;
-                
+                transition-duration: 0.2;   
             }
             
             li button:hover{
                 background-color: darkgray;
             }
             
-
-            
             section {
                 background-color: black;
                 
-                margin:auto;
+                margin-left:auto;
+                margin-right:auto;
                 width:80%;
                 height:600;
-                padding-top:0px;
                 
                 border-style:solid; border-color:white;
                 box-sizing:border-box;
             }
             
-
+            section listObj {
+                display:block;
+                
+                width:300px;
+                height:400px;
+                margin-left:2%;
+                margin-top:2%;
+                
+                background-color: black;
+                border-style:solid; border-color:white; border-width:thick;
+            }
+            
+            section header {
+                display:block;
+                width:290px;
+                height:100px;
+                
+                background-color: black;
+                border-style:solid; border-color:white; border-width:thick;
+            }
+            
+            section title {
+                display:block;
+                
+                font-family:sans-serif; 
+                font-variant:small-cap; 
+                color:white;
+                font-size: 30px;
+                text-align:center;
+                
+                padding-top: 30px;
+            }
+            
             
             body {background-color:black}
+            
             div {background-color: black}
             
             
@@ -88,12 +113,18 @@
         <div>
             <nav> <!-- Navigation Tabs -->
                 <ul>
-                    <li><button type="button"><i>Rename</i></button></li>
+                    <li><button type="button"><i>Rename</i></button></li> <!-- Addable and renamable buttons -->
                 </ul>
             </nav>
   
             <section> <!-- Main section for content -->
-
+                <listObj>
+                    <header><title>Devan</title></header>
+                    
+                    <list>
+                    
+                    </list>
+                </listObj>
             </section>
         </div>
     </body>
