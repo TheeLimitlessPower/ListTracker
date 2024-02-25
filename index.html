@@ -77,12 +77,30 @@
                 border-style:solid; border-color:white; border-width:thick;
             }
             
-            section header {
+            section upper {
+                display:block;
                 width:290px;
                 height:100px;
                 
                 background-color:black;
                 border-style:solid; border-color:white; border-width:thick;
+            }
+            section upper input[type=text] {
+                width:260px;
+                height: 50px;
+                margin-left:15px;
+                margin-right:15px;
+                margin-top:20px;
+                
+                text-align:center;
+                font-family:sans-serif; 
+                font-variant:small-cap; 
+                font-size:28px;
+                color:white;background-color:black;
+                
+                border:none; border-bottom:2px; border-bottom-color:white;
+                
+                resize:none;
             }
             
             section h2 {
@@ -202,11 +220,9 @@
   
             <section> <!-- Main section for content -->
                 <listObj>
-                    <header>
-                        <title>
-                            <h2>Devan</h2>
-                        </title>
-                    </header>
+                    <upper>
+                        <input type="text" id="content" name="content" placeholder="Header"/>
+                    </upper>
                     
                     <list>
                         <objectives>
