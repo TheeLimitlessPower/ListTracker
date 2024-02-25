@@ -58,6 +58,8 @@
                 margin-right:auto;
                 width:80%;
                 height:600;
+                overflow-x:scroll;
+                overflow-y:scroll;
                 
                 border-style:solid; border-color:white;
                 box-sizing:border-box;
@@ -76,7 +78,6 @@
             }
             
             section header {
-                display:block;
                 width:290px;
                 height:100px;
                 
@@ -84,16 +85,10 @@
                 border-style:solid; border-color:white; border-width:thick;
             }
             
-            section title {
-                display:block;
-                
+            section h2 {
                 font-family:sans-serif; 
                 font-variant:small-cap; 
                 color:white;
-                font-size:30px;
-                text-align:center;
-                
-                padding-top:30px;
             }
             
             section objectives {
@@ -118,6 +113,23 @@
                 padding-top: 0;
                 margin-top:7px;
             }
+            section p input[type=text] {   
+                width:225px;
+                height:50px;
+                margin-right:10px;
+                padding-top:0px;
+                overflow-y:scroll;
+                overflow-x:hidden;
+                
+                font-family:sans-serif; 
+                font-variant:small-cap; 
+                
+                color:white;background-color:black;
+                
+                border:none; border-bottom:2px; border-bottom-color:white;
+                
+                resize:none;
+            }
             
             section hideOption {
                 float: left;
@@ -134,10 +146,9 @@
             
             section ticket {
                 float: left;
-                width:100px;
+                width:130px;
                 height:20px;
-                margin-left:25px;
-                margin-top:3px;
+                margin-left:15px;
                 
                 font-family:sans-serif; 
                 font-variant:small-cap; 
@@ -146,6 +157,20 @@
                 
                 background-color:black;
             }
+            
+            section ticket input[type=text] {
+                width:90px;
+                height:16px;
+                margin-top: 3px;
+                
+                font-family:sans-serif; 
+                font-variant:small-cap; 
+                
+                color:white;background-color:black;
+                
+                border:none; border-bottom:2px; border-bottom-color:white;
+            }
+            section ticket label{color:white}
             
             section objectives::after {
                 content:"";
@@ -177,18 +202,25 @@
   
             <section> <!-- Main section for content -->
                 <listObj>
-                    <header><title>Devan</title></header>
+                    <header>
+                        <title>
+                            <h2>Devan</h2>
+                        </title>
+                    </header>
                     
                     <list>
                         <objectives>
-                            <p>send info to this client and look for a return<p>
+                            <p><input type="text" id="info" name="info" placeholder="Enter text here..."/><p>
                             
                             <hideOption>
                                 <input type="checkbox" id="done" name="done" checked/>
                                 <label for="done">Done</label>
                             </hideOption>
                             
-                            <ticket>ID:128987189</ticket>
+                            <ticket>
+                                <label for="ticket">ID:</label>
+                                <input type="text" id="ticket" name="ticket" placeholder="URL Link" size="9">
+                            </ticket>
                             
                         </objectives>
                     </list>
