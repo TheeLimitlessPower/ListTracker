@@ -66,7 +66,7 @@
             }
             
             section listObj {
-                display:block;
+                float:left;
                 
                 width:300px;
                 height:400px;
@@ -196,6 +196,45 @@
                 clear:both;
             }
             
+            section buttonObj1 button {
+                width:32px;
+                height:32px;
+                margin-top:20px;
+                margin-left:90px;
+                padding:0px;
+                border:none;
+                
+                transition-duration:0.2s;
+                background-color:black; 
+                
+            }
+            section buttonObj1 button img {
+                width:32px;
+                height:32px;
+                margin:0px;
+                padding:0px;
+            }
+            section buttonObj1 button:hover {background-color: darkgray}
+            
+            buttonObj2 button {
+                width:68px;
+                height:68px;
+                margin-left:20px;
+                margin-top:210px;
+                padding:0px;
+                border:none;
+                
+                transition-duration:0.2s;
+                background-color:black;
+            }
+            buttonObj2 button img {
+                width:64px;
+                height:64px;
+                margin:0px;
+                padding:0px; 
+            }
+            buttonObj2 button:hover {background-color: darkgray;}
+            
             body {background-color:black}
             
             div {background-color:black}
@@ -219,28 +258,37 @@
             </nav>
   
             <section> <!-- Main section for content -->
+                
+                <!-- Section for clicable button to add lists -->
+                <buttonObj2><button type="button"><img src="plus-64.png" alt="Plus Icon" style="width:64px;height:64px;"></button></buttonObj2>
+                
                 <listObj>
-                    <upper>
-                        <input type="text" id="content" name="content" placeholder="Header"/>
+                    
+                    <upper> <!-- Upper section for header label -->
+                        <input type="text" id="content" name="content" placeholder="Add header here..."/>
                     </upper>
                     
-                    <list>
-                        <objectives>
-                            <p><input type="text" id="info" name="info" placeholder="Enter text here..."/><p>
+                    <!-- Main Section for objectives list -->
+                    <objectives>
+                        <p><input type="text" id="info" name="info" placeholder="Enter text here..."/><p>
                             
-                            <hideOption>
-                                <input type="checkbox" id="done" name="done" checked/>
-                                <label for="done">Done</label>
-                            </hideOption>
+                        <hideOption>
+                            <input type="checkbox" id="done" name="done" checked/>
+                            <label for="done">Done</label>
+                        </hideOption>
                             
-                            <ticket>
-                                <label for="ticket">ID:</label>
-                                <input type="text" id="ticket" name="ticket" placeholder="URL Link" size="9">
-                            </ticket>
+                        <ticket>
+                            <label for="ticket">ID:</label>
+                            <input type="text" id="ticket" name="ticket" placeholder="URL Link" size="9">
+                        </ticket>
                             
-                        </objectives>
-                    </list>
-                </listObj>
+                    </objectives>
+                        
+                    <!-- Section for clickable button to add objectives -->
+                    <buttonObj1><button type="button"><img src="plus-32.png" alt="Plus Icon" style="width:32px;height:32px;"></button></buttonObj1>
+                        
+                </listObj> 
+                
             </section>
         </div>
     </body>
