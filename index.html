@@ -135,6 +135,7 @@
                 padding-right:2px;
                 padding-top: 0;
                 margin-top:7px;
+                margin-left:2px;
             }
             section p input[type=text] {   
                 width:225px;
@@ -169,9 +170,10 @@
             
             section ticket {
                 float: left;
-                width:130px;
+                width:110px;
                 height:20px;
-                margin-left:15px;
+                margin-left:10px;
+                margin-right:0px;
                 
                 font-family:sans-serif; 
                 font-variant:small-cap; 
@@ -182,9 +184,10 @@
             }
             
             section ticket input[type=text] {
-                width:90px;
+                width:70px;
                 height:16px;
-                margin-top: 3px;
+                margin-top:3px;
+                margin-right:0px;
                 
                 font-family:sans-serif; 
                 font-variant:small-cap; 
@@ -229,7 +232,7 @@
                 padding:0px;
                 border:none;
                 
-                transition-duration:0.2s;
+                transition-duration:0.1s;
                 background-color:black;
             }
             buttonObj2 button img {
@@ -240,6 +243,45 @@
             }
             buttonObj2 button:hover {background-color: darkgray;}
             
+            buttonObj3 button {
+                width:16px;
+                height:16px;
+                padding:0px;
+                margin-top:3px;
+                margin-left:10px;
+                border:none;
+                
+                transition-duration:0.2s;
+                background-color:black;
+            }
+            buttonObj3 button img {
+                width:16px;
+                height:16px;
+                margin:0px;
+                padding:0px;
+            }
+            buttonObj3 button:hover {background-color:darkgray;}
+            
+            buttonObj4 button {
+                float:right;
+                width:32px;
+                height:32px;
+                padding:0px;
+                margin-top:135px;
+                margin-left:80px;
+                border:none;
+                
+                transition-duration:0.1s;
+                background-color:black;
+            }
+            buttonObj4 button img {
+                width:32px;
+                height:32px;
+                margin:0px;
+                padding:0px;
+            }
+            buttonObj4 button:hover {background-color:darkgray;}
+            
             body {background-color:black}
             
             div {background-color:black}
@@ -248,7 +290,8 @@
         </style>
     </head>
     
-    <body> <!-- Main Container -->
+    <!-- Main Container -->
+    <body>
         <div>
             <h1>
                 List Tracker
@@ -256,20 +299,23 @@
         </div>
         
         <div>
-            <nav> <!-- Navigation Tabs -->
+            <!-- Navigation Tabs -->
+            <nav> 
                 <ul>
                     <li><button type="button"><i>Current Tab</i></button></li> <!-- Addable and renamable buttons -->
                 </ul>
             </nav>
-  
-            <section> <!-- Main section for content -->
+            
+            <!-- Main section for content -->
+            <section>
                 
                 <!-- Section for clicable button to add lists -->
                 <buttonObj2><button type="button"><img src="plus-64.png" alt="Plus Icon" style="width:64px;height:64px;"></button></buttonObj2>
                 
                 <listObj>
                     
-                    <upper> <!-- Upper section for header label -->
+                    <!-- Upper section for header label -->
+                    <upper>
                         <input type="text" id="content" name="content" placeholder="Add header here..."/>
                     </upper>
                     
@@ -277,7 +323,7 @@
                     <objectives>
                         <p><input type="text" id="info" name="info" placeholder="Enter text here..."/><p>
                             
-                        <hideOption>
+                        <hideOption> 
                             <input type="checkbox" id="done" name="done" checked/>
                             <label for="done">Done</label>
                         </hideOption>
@@ -286,12 +332,25 @@
                             <label for="ticket">ID:</label>
                             <input type="text" id="ticket" name="ticket" placeholder="URL Link" size="9">
                         </ticket>
+                        
+                        <!-- Section for clickable button to delete objectives -->
+                        <deleteButton>
+                            <buttonObj3>
+                                <button type="button"><img src="x-mark-4-16.png" alt="X Icon" style="width:16px;height:16px;"></button>
+                            </buttonObj3>
+                        </deleteButton>
                             
                     </objectives>
                         
                     <!-- Section for clickable button to add objectives -->
                     <buttonObj1><button type="button"><img src="plus-32.png" alt="Plus Icon" style="width:32px;height:32px;"></button></buttonObj1>
-                        
+                    
+                    <!-- Section for clickable button to remove lists -->
+                    <buttonObj4>
+                        <button type="button"><img src="x-mark-4-32.png" alt="X Icon" style="width:32px;height:32px;"></button>
+                    </buttonObj4>
+                    
+                    
                 </listObj> 
                 
             </section>
