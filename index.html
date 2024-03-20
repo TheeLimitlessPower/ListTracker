@@ -2,7 +2,27 @@
     
 <html>
     <head>
-        <script> scr="js/mainScript.js"</script>
+        <script>
+            var totalLists = 1;
+            function addList() {
+                totalList++;
+                
+                const defaultList = document.getElementById("listObj");
+                const newList = defaultList.cloneNode(true);
+                
+                newList.id = "listObj" + totalLists;
+
+                const section = document.getElementById("section");
+                section.appendChild(newList);
+                
+            }
+            function removeList() {
+                
+                
+                
+                totalList--;
+            }
+        </script>
         <style> 
             h1 {
                 font-family:sans-serif; 
@@ -307,12 +327,16 @@
             </nav>
             
             <!-- Main section for content -->
-            <section>
+            <section id="section">
                 
                 <!-- Section for clicable button to add lists -->
-                <buttonObj2><button type="button"><img src="plus-64.png" alt="Plus Icon" style="width:64px;height:64px;"></button></buttonObj2>
+                <buttonObj2>
+                    <button type="button" id="addList" onclick="addList()">
+                        <img src="plus-64.png" alt="Plus Icon" style="width:64px;height:64px;">
+                    </button>
+                </buttonObj2>
                 
-                <listObj>
+                <listObj id="listObj">
                     
                     <!-- Upper section for header label -->
                     <upper>
@@ -336,18 +360,26 @@
                         <!-- Section for clickable button to delete objectives -->
                         <deleteButton>
                             <buttonObj3>
-                                <button type="button"><img src="x-mark-4-16.png" alt="X Icon" style="width:16px;height:16px;"></button>
+                                <button type="button">
+                                    <img src="x-mark-4-16.png" alt="X Icon" style="width:16px;height:16px;">
+                                </button>
                             </buttonObj3>
                         </deleteButton>
                             
                     </objectives>
                         
                     <!-- Section for clickable button to add objectives -->
-                    <buttonObj1><button type="button"><img src="plus-32.png" alt="Plus Icon" style="width:32px;height:32px;"></button></buttonObj1>
+                    <buttonObj1>
+                        <button type="button">
+                            <img src="plus-32.png" alt="Plus Icon" style="width:32px;height:32px;">
+                        </button>
+                    </buttonObj1>
                     
                     <!-- Section for clickable button to remove lists -->
                     <buttonObj4>
-                        <button type="button"><img src="x-mark-4-32.png" alt="X Icon" style="width:32px;height:32px;"></button>
+                        <button type="button">
+                            <img src="x-mark-4-32.png" alt="X Icon" style="width:32px;height:32px;">
+                        </button>
                     </buttonObj4>
                     
                     
