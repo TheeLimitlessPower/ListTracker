@@ -4,25 +4,60 @@
     <head>
         <script>
             var totalLists = 1;
+            ///////////////////////////////////////////////////////////////////////////////////////
+            // Adds a duplicate list option
             function addList() {
-                totalList++;
-                
-                const defaultList = document.getElementById("listObj");
-                const newList = defaultList.cloneNode(true);
-                
+                totalLists++;
+                // Pull out a standard list and dup it
+                const defaultList = document.getElementById("listObj1");
+                const newList = defaultList.cloneNode(true); 
+                const newButtonObj = newList.querySelector("buttonObj4");
+                const newDeleteButton = newButtonObj.querySelector("#removeList1");
+
+                // Modify the list as needed
                 newList.id = "listObj" + totalLists;
 
+                newDeleteButton.id = "removeList" + totalLists;
+
+                console.log(newDeleteButton);
+
+                // Add it into the content section as a new list
                 const section = document.getElementById("section");
                 section.appendChild(newList);
-                
+
             }
-            function removeList() {
+            ///////////////////////////////////////////////////////////////////////////////////////
+            // Removes the list associated with the button ID
+            function removeList(clickedID) {
+                var listNumber = clickedID.slice(-1);
+
+                var listID = "listObj" + listNumber;
+
+                const deleteList = document.getElementById(listID);
+                const parent = deleteList.parentElement;
+
+                parent.removeChild(deleteList);
                 
-                
-                
-                totalList--;
+                totalLists--;
             }
+            ///////////////////////////////////////////////////////////////////////////////////////
+            // Adds an objective object to the current list
+            function addObjective() {
+
+            }
+            ///////////////////////////////////////////////////////////////////////////////////////
+            // Removes the objectives associated with the given ID
+            function removeObjective(clickedID) {
+
+            }
+            ///////////////////////////////////////////////////////////////////////////////////////
+
+
         </script>
+
+
+
+
         <style> 
             h1 {
                 font-family:sans-serif; 
@@ -138,7 +173,7 @@
                 margin-left:20px;
                 margin-right:20px;
                 margin-top:10px;
-                overflow:hidden
+                overflow:visible;
                 
                 background-color: black;
                 border-style:solid; border-color:white;
@@ -197,7 +232,7 @@
                 
                 font-family:sans-serif; 
                 font-variant:small-cap; 
-                text-align:center
+                text-align:center;
                 color:white;
                 
                 background-color:black;
@@ -336,7 +371,7 @@
                     </button>
                 </buttonObj2>
                 
-                <listObj id="listObj">
+                <listObj id="listObj1">
                     
                     <!-- Upper section for header label -->
                     <upper>
@@ -360,7 +395,7 @@
                         <!-- Section for clickable button to delete objectives -->
                         <deleteButton>
                             <buttonObj3>
-                                <button type="button">
+                                <button type="button" id="deleteObjective1" onclick="deleteObjective(this.id)">
                                     <img src="x-mark-4-16.png" alt="X Icon" style="width:16px;height:16px;">
                                 </button>
                             </buttonObj3>
@@ -370,14 +405,14 @@
                         
                     <!-- Section for clickable button to add objectives -->
                     <buttonObj1>
-                        <button type="button">
+                        <button type="button" id="addObjective1" onclick="addObjective()">
                             <img src="plus-32.png" alt="Plus Icon" style="width:32px;height:32px;">
                         </button>
                     </buttonObj1>
                     
                     <!-- Section for clickable button to remove lists -->
                     <buttonObj4>
-                        <button type="button">
+                        <button type="button" id="removeList1" onclick="removeList(this.id)">
                             <img src="x-mark-4-32.png" alt="X Icon" style="width:32px;height:32px;">
                         </button>
                     </buttonObj4>
