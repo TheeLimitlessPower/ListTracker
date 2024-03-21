@@ -30,6 +30,7 @@
                 // Find the list number from the ID
                 var listNumber = clickedID.slice(-1);
 
+                if(listNumber > 1){
                 var listID = "listObj" + listNumber;
 
                 // Find the list object, and remove it from its parent
@@ -38,46 +39,53 @@
                 parent.removeChild(deleteList);
                 
                 totalLists--;
+                }
             }
             ///////////////////////////////////////////////////////////////////////////////////////
             // Adds an objective object to the current list
             function addObjective() {
                 // Pull out the standard objective and its delete button
-                const defaultObjective = document.getElementById("objectives");
+                const defaultObjective = document.getElementById("objective1");
+                const newObjective = defaultObjective.cloneNode(true);
+                const deleteWrap = newObjective.querySelector("deleteButton");
+                const buttonWrap = deleteWrap.querySelector("buttonObj3");
+                const newDeleteButton = buttonWrap.querySelector("#deleteObjective1");
 
-                const objectiveWrap = newObjective.querySelector("#objective1");
-                const newObjective = objectiveWrap.cloneNode(true);
+                // Increment objectives
+                newObjective.title = parseInt(defaultObjective.title) + 1;
 
-                const deleteWrap = newButtonObj.querySelector("deleteButton");
-                const buttonContainer = deleteWrap.querySelector("buttonObj3");
-                const newDeleteButton = buttonContainer.querySelector("#deleteObjective1");
-
-                var objectiveCount = defaultObjective.title;
+                var objectiveCount = newObjective.title;
 
                 // Modify IDs where needed
                 newObjective.id = "objective" + objectiveCount;
 
                 newDeleteButton.id = "deleteButton" + objectiveCount;
-
-                console.log(newObjective);
-                console.log(newDeleteButton);
                 
                 // Add it to the list as a new objective
+                const parent = defaultObjective.parentNode;
+                parent.appendChild(newObjective);
 
             }
             ///////////////////////////////////////////////////////////////////////////////////////
             // Removes the objectives associated with the given ID
             function removeObjective(clickedID) {
+                // Find the list number from the ID
+                var objectiveNumber = clickedID.slice(-1);
 
+                var objectiveID = "objective" + listNumber;
+
+                // Find the list object, and remove it from its parent
+                const deleteObjective = document.getElementById(objectiveID);
+                const parent = deleteObjective.parentElement;
+                parent.removeChild(deleteList);
+                
+                parent--;
             }
             ///////////////////////////////////////////////////////////////////////////////////////
 
 
         </script>
-
-
-
-
+        ///////////////////////////////////////////////////////////////////////////////////////
         <style> 
             h1 {
                 font-family:sans-serif; 
@@ -134,8 +142,8 @@
                 margin-right:auto;
                 width:80%;
                 height:600;
-                overflow-x:scroll;
-                overflow-y:scroll;
+                overflow-x:auto;
+                overflow-y:auto;
                 
                 border-style:solid; border-color:white;
                 box-sizing:border-box;
@@ -148,7 +156,6 @@
                 height:400px;
                 margin-left:2%;
                 margin-top:2%;
-                overflow:hidden;
                 
                 background-color:black;
                 border-style:solid; border-color:white; border-width:thick;
@@ -186,7 +193,7 @@
                 color:white;
             }
             
-            section objectives {
+            section objective {
                 display:block;
                 width:250px;
                 height:100px;
@@ -399,8 +406,8 @@
                     </upper>
                     
                     <!-- Main Section for objectives list -->
-                    <objectives>
-                        <objective id="objective1" title="1"></objective>
+                    <objectives id="objectives" title="1">
+                        <objective id="objective1" title="1">
                             <p><input type="text" id="info" name="info" placeholder="Enter text here..."/><p>
                             
                             <hideOption> 
