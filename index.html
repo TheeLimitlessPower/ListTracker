@@ -19,8 +19,6 @@
 
                 newDeleteButton.id = "removeList" + totalLists;
 
-                console.log(newDeleteButton);
-
                 // Add it into the content section as a new list
                 const section = document.getElementById("section");
                 section.appendChild(newList);
@@ -29,13 +27,14 @@
             ///////////////////////////////////////////////////////////////////////////////////////
             // Removes the list associated with the button ID
             function removeList(clickedID) {
+                // Find the list number from the ID
                 var listNumber = clickedID.slice(-1);
 
                 var listID = "listObj" + listNumber;
 
+                // Find the list object, and remove it from its parent
                 const deleteList = document.getElementById(listID);
                 const parent = deleteList.parentElement;
-
                 parent.removeChild(deleteList);
                 
                 totalLists--;
@@ -43,6 +42,27 @@
             ///////////////////////////////////////////////////////////////////////////////////////
             // Adds an objective object to the current list
             function addObjective() {
+                // Pull out the standard objective and its delete button
+                const defaultObjective = document.getElementById("objectives");
+
+                const objectiveWrap = newObjective.querySelector("#objective1");
+                const newObjective = objectiveWrap.cloneNode(true);
+
+                const deleteWrap = newButtonObj.querySelector("deleteButton");
+                const buttonContainer = deleteWrap.querySelector("buttonObj3");
+                const newDeleteButton = buttonContainer.querySelector("#deleteObjective1");
+
+                var objectiveCount = defaultObjective.title;
+
+                // Modify IDs where needed
+                newObjective.id = "objective" + objectiveCount;
+
+                newDeleteButton.id = "deleteButton" + objectiveCount;
+
+                console.log(newObjective);
+                console.log(newDeleteButton);
+                
+                // Add it to the list as a new objective
 
             }
             ///////////////////////////////////////////////////////////////////////////////////////
@@ -380,27 +400,28 @@
                     
                     <!-- Main Section for objectives list -->
                     <objectives>
-                        <p><input type="text" id="info" name="info" placeholder="Enter text here..."/><p>
+                        <objective id="objective1" title="1"></objective>
+                            <p><input type="text" id="info" name="info" placeholder="Enter text here..."/><p>
                             
-                        <hideOption> 
-                            <input type="checkbox" id="done" name="done" checked/>
-                            <label for="done">Done</label>
-                        </hideOption>
+                            <hideOption> 
+                                <input type="checkbox" id="done" name="done" checked/>
+                                <label for="done">Done</label>
+                            </hideOption>
                             
-                        <ticket>
-                            <label for="ticket">ID:</label>
-                            <input type="text" id="ticket" name="ticket" placeholder="URL Link" size="9">
-                        </ticket>
+                            <ticket>
+                                <label for="ticket">ID:</label>
+                                <input type="text" id="ticket" name="ticket" placeholder="URL Link" size="9">
+                            </ticket>
                         
-                        <!-- Section for clickable button to delete objectives -->
-                        <deleteButton>
-                            <buttonObj3>
-                                <button type="button" id="deleteObjective1" onclick="deleteObjective(this.id)">
-                                    <img src="x-mark-4-16.png" alt="X Icon" style="width:16px;height:16px;">
-                                </button>
-                            </buttonObj3>
-                        </deleteButton>
-                            
+                            <!-- Section for clickable button to delete objectives -->
+                            <deleteButton>
+                                <buttonObj3>
+                                    <button type="button" id="deleteObjective1" onclick="removeObjective(this.id)">
+                                        <img src="x-mark-4-16.png" alt="X Icon" style="width:16px;height:16px;">
+                                    </button>
+                                </buttonObj3>
+                            </deleteButton>
+                        </objective>    
                     </objectives>
                         
                     <!-- Section for clickable button to add objectives -->
